@@ -3,10 +3,12 @@ import type { GetPost } from "../../protocols";
 import axios from "axios";
 
 export interface PostState {
+  loading: boolean;
   posts: GetPost[];
 }
 
 const initialState: PostState = {
+  loading: false,
   posts: [],
 };
 
@@ -19,6 +21,9 @@ const setAllPosts = createSlice({
   name: "posts",
   initialState,
   extraReducers: (builder) => {
+    builder.addCase(fetchPosts.pending, (state) =>{
+      state.loading = true
+    })
     builder.addCase(fetchPosts.fulfilled, (state, action) => {
       state.posts = action.payload;
     });
