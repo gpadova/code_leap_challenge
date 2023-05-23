@@ -13,7 +13,7 @@ export default function Network() {
   const reRenderTrigger = useAppSelector(
     (state) => state.reRender.reRenderTrigger
   );
-  const array = [1, 2, 3, 4, 5, 6];
+  
   useEffect(() => {
     dispatch(fetchPosts());
   }, [dispatch, reRenderTrigger]);
@@ -36,7 +36,7 @@ export default function Network() {
                 title={i.title}
               />
             ))
-          : array.map((i) => (
+          : Array(8).map((i) => (
               <LoadingContent key={i}/>
             ))}
       </CenteredDiv>
