@@ -26,7 +26,7 @@ export default async function postPosts(
   };
 
   try {
-    await axios.post(import.meta.env.VITE_BASE_REQUEST_URL, sentObject);
+    await axios.post("https://dev.codeleap.co.uk/careers/", sentObject);
     dispatch(setTitle(""));
     dispatch(setContent(""));
     dispatch(setReRenderTrigger());

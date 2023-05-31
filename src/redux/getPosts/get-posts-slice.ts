@@ -13,7 +13,7 @@ const initialState: PostState = {
 };
 
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
-  const response = await axios.get(import.meta.env.VITE_BASE_REQUEST_URL);
+  const response = await axios.get("https://dev.codeleap.co.uk/careers/");
   return response.data.results.map((user: GetPost) => user);
 });
 

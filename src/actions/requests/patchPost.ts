@@ -33,7 +33,7 @@ export default async function patchPost(
 
   try {
     await axios.patch(
-      `${import.meta.env.VITE_BASE_REQUEST_URL}${id}/`,
+      `https://dev.codeleap.co.uk/careers/${id}/`,
       patchedObject
     );
     dispatch(setEditModal(false));

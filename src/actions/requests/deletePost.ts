@@ -20,7 +20,7 @@ export default async function deletePost(
     Dispatch<AnyAction>
 ) {
   try {
-    await axios.delete(`${import.meta.env.VITE_BASE_REQUEST_URL}${id}/`);
+    await axios.delete(`https://dev.codeleap.co.uk/careers/${id}/`);
     dispatch(setReRenderTrigger());
     dispatch(setDeleteModal(false));
   } catch (error) {
